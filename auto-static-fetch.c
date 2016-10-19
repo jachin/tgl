@@ -21,7 +21,7 @@ static int out_buf_pos;
 static int valid_utf8_char (const char *str) {
   unsigned char c = (unsigned char) *str;
   int n = 0;
- 
+
   if ((c & 0x80) == 0x00) {
     n = 0;
   } else if ((c & 0xe0) == 0xc0) {
@@ -61,7 +61,7 @@ static void print_escaped_string (const char *str, int len) {
         eprintf ("%c", *(str ++));
       }
     } else if (((unsigned char)*str) >= ' ' && *str != '"' && *str != '\\') {
-      eprintf ("%c", *str);      
+      eprintf ("%c", *str);
       str ++;
     } else {
       switch (*str) {
